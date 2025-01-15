@@ -1,7 +1,13 @@
 //infer types(implicit types)
-var userDetails = {
-    name: "afeeda",
+var username = "afeeda";
+username = 0;
+var userDeta = {
+    name: "afeda",
     age: 28,
-    place: "kariyad",
 };
-console.log(userDetails);
+var currentstatus = "pending ";
+//from api
+var response = "pending";
+if (response === "pending") {
+    currentstatus = "pending ";
+}

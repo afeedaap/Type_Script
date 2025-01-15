@@ -221,10 +221,4 @@ type Users={
 //         return "null heloo"
 //      }
 // }
-const promptSync = require('prompt-sync')();
 
-// Ask for a character input
-const charInput: string = promptSync('Enter a character: ');
-
-// Display the input
-console.log(`You entered: ${charInput}`);
