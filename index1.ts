@@ -105,18 +105,18 @@ type Users={
     age:number;
     salary:number;
 }
-// const userDetail:Users={
-//     name:"afeeda",
-//     age:28
+const userDetail:Users={
+    name:"afeeda",
+    age:28
 
-// }
-// when we need readonly all attribute using readonly
+}
+//when we need readonly all attribute using readonly
 // const userDetail:readonly<Users>={
 //     name:"afeeda",
 //     age:28
 
 // }
-//when we need partially change the any attribute using partial type
+//when we need all aattribute basically otipnal using partial type
 // const userDetail:Partial<Users>={
 //     name:"afeeda",
 //     age:28

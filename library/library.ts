@@ -19,7 +19,7 @@ class Book extends LibraryItem {
         super(title, author, yearPublished); 
     }
 
-    // Override displayDetails (Polymorphism)
+   
     displayDetails(): string {
         return `${super.displayDetails()} Genre: ${this.genre}`;
     }
@@ -35,7 +35,7 @@ class Magazine extends LibraryItem {
     }
 
     displayDetails(): string {
-        return `${super.displayDetails()} Issue Number: ${this.edition}`;
+        return `${super.displayDetails()} edition: ${this.edition}`;
     }
 }
 class Library {
@@ -56,9 +56,11 @@ const library = new Library();
 const book1 = new Book("atomic habits", "james clear", 1995, "Fiction");
 const magazine1 = new Magazine("labour india", "educatinal", 1990, 100);
 
-
+const book2 = new Book("wings of fire", "apj", 1990, "Fiction");
 
 library.addItem(book1);
 library.addItem(magazine1);
 
+library.displayAllItems();
+library.addItem(book2);
 library.displayAllItems();

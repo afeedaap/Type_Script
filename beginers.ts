@@ -5,6 +5,9 @@
 // let age:number=23;
 // let price:number=44.90
 
+import { log } from "console"
+import { loadavg } from "os";
+
 //boolean
 
 // let ischeck:boolean=true;
@@ -208,3 +211,121 @@
 // console.log(book.title);
 
 
+//function overloding
+// function add(num1:string,num2:string):string;
+// function add(num1:number,num2:number):number;
+// function add(num1:any,num2:any):any{
+//   return num1+num2;
+
+// }
+// let result=add(2,3)
+// console.log(result)
+// let strresult=add("2","3");
+// console.log("strr",strresult)
+//generics
+// function add<T>(num:T,num1:T):T{
+//   return num+num1
+// }
+// let resultsum=add<number>(2,3)
+// console.log(resultsum);
+// type user={
+//   name:string;
+//   age:number
+// }
+// type admin=user &{
+
+//   role:string
+// }
+// let userDetail:user={
+//   name:"afeeda",
+//   age:28
+// }
+// let adminDetail:admin={
+//   name:"adhill",
+//   age:22,
+//   role:"admin"
+
+// }
+// function getname<T>(details:T):T{
+//   return details
+// }
+// let uservalue=getname<user>(userDetail)
+// let adminvalue=getname<admin>(adminDetail)
+// console.log(uservalue.age)
+//utility type
+// type user={
+//   name:string;
+//   age:number;
+//   role:string;
+// }
+// let userDetails:Readonly<user>={
+//   name:"feeda",
+//   age:23,
+//   role:"admin"
+// }
+// let user1:Partial<user>={
+//   name:"aaa"
+// }
+// console.log(userDetails);
+// let user2:Required<user>={
+//   name:"afeeda",
+//   age:24
+// }
+// let user2:Pick<user,"name"|"age">={
+//   name:"afeeda",
+//   age:29,
+  
+// }
+//omit
+// let user:Omit<user,"role">={
+//   name:"afeeda",
+//   age:20
+// }
+// type statusType="pending"|"completed"|"failed";
+// const status:Exclude<statusType,"pending">="completed"
+
+//record
+// type food=Record<string,any>;
+// let fooditem:food={
+//   pizzza:"oval",
+//   chivke:"kfc",
+//   age:20
+// }
+// function add(num:number[]):number{
+//   return num.reduce((sum,curr)=>sum+curr,0)
+// }
+// let sumresult=add([1,2,4,5,5])
+// console.log(sumresult);
+//generics
+// function add<T>(num:T):T{
+//   return num
+// }
+// let resultsum=add<number>(2)
+// let strsum=add<string>("heloo")
+// console.log("resuu",resultsum);
+// console.log("sdf",strsum);
+
+//tuples
+// const person:[number,string]=[34,"afeeda"];
+// console.log(person[0])
+//optinsl typles
+const person1:[string,number?]=["afeeda",34]
+//rest tuples
+// const person3:[string,...number[]]=["afeeda",23,45,67,56]
+//destruuring
+// const arr:[number,number]=[10,20]
+// const [x,y]=arr
+// console.log(x);
+
+//readonly array
+// let person5: readonly number[]=[1,3,45,5]
+// let person5=[1,23122]
+
+//readonly tuple 
+// let arr:readonly[number,number]=[10,20]
+// arr[0]=34;
+//typed array
+let student:[string,number][]=[
+  ["alice",30],["hello",45]
+]
+console.log(student[1][1]);

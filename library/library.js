@@ -19,7 +19,6 @@ var LibraryItem = /** @class */ (function () {
         this.author = author;
         this.yearPublished = yearPublished;
     }
-    // A method to display the details of the item
     LibraryItem.prototype.displayDetails = function () {
         return "".concat(this.title, " by ").concat(this.author, ", published in ").concat(this.yearPublished, ".");
     };
@@ -28,11 +27,10 @@ var LibraryItem = /** @class */ (function () {
 var Book = /** @class */ (function (_super) {
     __extends(Book, _super);
     function Book(title, author, yearPublished, genre) {
-        var _this = _super.call(this, title, author, yearPublished) || this; // Call the base class constructor
+        var _this = _super.call(this, title, author, yearPublished) || this;
         _this.genre = genre;
         return _this;
     }
-    // Override displayDetails (Polymorphism)
     Book.prototype.displayDetails = function () {
         return "".concat(_super.prototype.displayDetails.call(this), " Genre: ").concat(this.genre);
     };
@@ -40,13 +38,13 @@ var Book = /** @class */ (function (_super) {
 }(LibraryItem));
 var Magazine = /** @class */ (function (_super) {
     __extends(Magazine, _super);
-    function Magazine(title, author, yearPublished, issueNumber) {
+    function Magazine(title, author, yearPublished, edition) {
         var _this = _super.call(this, title, author, yearPublished) || this;
-        _this.issueNumber = issueNumber;
+        _this.edition = edition;
         return _this;
     }
     Magazine.prototype.displayDetails = function () {
-        return "".concat(_super.prototype.displayDetails.call(this), " Issue Number: ").concat(this.issueNumber);
+        return "".concat(_super.prototype.displayDetails.call(this), " edition: ").concat(this.edition);
     };
     return Magazine;
 }(LibraryItem));
@@ -54,11 +52,9 @@ var Library = /** @class */ (function () {
     function Library() {
         this.items = [];
     }
-    // Add a new item to the library
     Library.prototype.addItem = function (item) {
         this.items.push(item);
     };
-    // Display details of all items
     Library.prototype.displayAllItems = function () {
         this.items.forEach(function (item) {
             console.log(item.displayDetails());
@@ -67,11 +63,11 @@ var Library = /** @class */ (function () {
     return Library;
 }());
 var library = new Library();
-// Create library items
-var book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, "Fiction");
-var magazine1 = new Magazine("National Geographic", "Various", 2023, 502);
-// Add items to the library
+var book1 = new Book("atomic habits", "james clear", 1995, "Fiction");
+var magazine1 = new Magazine("labour india", "educatinal", 1990, 100);
+var book2 = new Book("wings of fire", "apj", 1990, "Fiction");
 library.addItem(book1);
 library.addItem(magazine1);
-// Display all library items
+library.displayAllItems();
+library.addItem(book2);
 library.displayAllItems();
